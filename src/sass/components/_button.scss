@@ -1,0 +1,44 @@
+.btn-text {
+    
+        font-size: $default-font-size;
+        color: $color-primary;
+        display: inline-block;
+        text-decoration: none;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        border-bottom: .1rem solid $color-primary;
+        padding: .3rem;
+        transition: all .2s;
+    
+
+    &:hover {
+        background-color: $color-primary;
+        color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+        transform: translateY(-.2rem);
+    }
+
+    &:active {
+        box-shadow: 0 .5rem 1rem rgba($color-black, 0.15);
+        transform: translateY(0);
+    }
+}
+
+.btn-filter {
+    font-size: $default-font-size;
+    color: $color-white;
+    display: inline-block;
+    width: 10rem;
+    height: 3rem;
+    border: none;
+    padding: .3rem;
+    background-color: $color-primary-light;
+    border-radius: .5rem;
+    margin: 2rem;
+    outline: none;
+
+    &:hover {
+        background-color: $color-primary-dark;
+    }
+}
