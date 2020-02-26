@@ -1,27 +1,27 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import TodoForm from './TodoForm'
 
-export default class SearchItem extends Component {
-    state = { text: "" };
+const SearchItem = () => {
+    const [text, setText] = useState("");
 
-    handleChange = e => {
-        this.setState({ text: e.target.value });
+    const handleChange = e => {
+        setText(e.target.value);
     };
 
-    handleSubmit = e => {
+    const handleSubmit = e => {
         e.preventDefault();
     };
 
-    render() {
-        return (
-            <div className="container">
-                <h2 className="heading-primary u-margin-bottom-small">Todo App</h2>
-                <form className="form-search" onSubmit={this.handleSubmit}>
-                    <input className="input-text" value={this.state.text} onChange={this.handleChange} />
-                    <button className="btn-text">Search</button>
-                </form>
-                <TodoForm search={this.state.text} />
-            </div>
-        )
-    }
+    return (
+        <div className="container">
+            <h2 className="heading-primary u-margin-bottom-small">Todo App</h2>
+            <form className="form-search" onSubmit={handleSubmit}>
+                <input className="input-text" value={text} onChange={handleChange} />
+                <button className="btn-text">Search</button>
+            </form>
+            <TodoForm search={text} />
+        </div>
+    )
 }
+
+export default SearchItem
