@@ -24,6 +24,10 @@ const TodoForm = props => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    if (!date) {
+      alert('Please choose a date for deadline');
+      return;
+    }
     setTodoList(todoList => [
       { text: text, done: false, id: new Date(), deadline: new Date(date) },
       ...todoList
